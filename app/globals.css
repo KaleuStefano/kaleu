@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #070708;
+  --bg-elevated: #0b0b0d;
+  --line: #1d1d22;
+  --line-strong: #26262d;
+  --fg: #ededf0;
+  --fg-muted: #9a9aa6;
+  --fg-faint: #5b5b67;
+  --accent: #ffffff;
+
+  --col-nav: 220px;
+  --col-list: 320px;
+
+  --font-sans: "InterVariable", "Inter", "Helvetica Neue", "Helvetica", "Arial",
+    system-ui, -apple-system, sans-serif;
+
+  color-scheme: dark;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --col-nav: 200px;
+    --col-list: 280px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "cv11", "calt";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow: auto;
+  }
+}
+
+::selection {
+  background: #ffffff;
+  color: #000000;
+}
+
+/* Hairline divider used to mimic a native app */
+.hairline {
+  background-color: var(--line);
+}
+
+.hairline-strong {
+  background-color: var(--line-strong);
+}
+
+/* Custom scrollbars (column lists) */
+.scroll-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.scroll-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scroll-thin::-webkit-scrollbar-thumb {
+  background: #1d1d22;
+  border-radius: 999px;
+}
+.scroll-thin::-webkit-scrollbar-thumb:hover {
+  background: #2c2c33;
+}
+
+/* Hide native cursor when our custom one is active. We only do this on
+   pointer devices so touch users keep their tap targets. */
+@media (pointer: fine) {
+  html.has-custom-cursor,
+  html.has-custom-cursor * {
+    cursor: none !important;
+  }
+}
+
+/* Reduced motion fallback */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Headings */
+.h-display {
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 0.95;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+/* Marquee */
+.marquee {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 12%,
+    black 88%,
+    transparent
+  );
+}
+
+/* Skeleton shimmer for media placeholders */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #0e0e11 0%,
+    #16161a 50%,
+    #0e0e11 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2.4s linear infinite;
+}
