@@ -1,0 +1,35 @@
+{
+  "name": "kaleu-premium-portfolio",
+  "version": "1.0.0",
+  "description": "CMS-driven premium dark portfolio for a senior motion designer and 3D generalist.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "check": "tsc -b --noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KaleuStefano/kaleu.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/KaleuStefano/kaleu/issues"
+  },
+  "homepage": "https://github.com/KaleuStefano/kaleu#readme",
+  "dependencies": {
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.15",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.2",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.14"
+  }
+}
